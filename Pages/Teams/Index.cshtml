@@ -15,9 +15,9 @@
     </form>
 </div>
 
-<section>
+<div class="table-responsive">
     <table class="table">
-        <thead>
+        <thead class="table-dark">
             <tr>
                 <th scope="col">Team</th>
                 <th scope="col">Wins</th>
@@ -31,7 +31,7 @@
             {
                 <tr>
                     <th scope="row">
-                        <a class="d-flex p1" asp-page="./Team" asp-route-id="@Team.TeamId">
+                        <a class="d-flex text-dark" asp-page="./Team" asp-route-id="@Team.TeamId">
                             @Team.Location @Team.Name
                         </a>
                     </th>
@@ -43,4 +43,4 @@
             }
         </tbody>
     </table>
-</section>
+</div>

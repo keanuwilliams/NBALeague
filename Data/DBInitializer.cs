@@ -30,8 +30,8 @@ namespace League.Data
     // create the conference names and ids
     var Conferences = new Conference[]
     {
-      new Conference{ConferenceId="WES",Name="Western Conference"},
-      new Conference{ConferenceId="EAS",Name="Eastern Conference"}
+      new Conference{ConferenceId="WES",Name="Western"},
+      new Conference{ConferenceId="EAS",Name="Eastern"}
     };
 
     foreach (Conference c in Conferences)
@@ -187,7 +187,7 @@ namespace League.Data
       new Team {
         DivisionId = "CE",
         Location = "Milwaukee",
-        Name = "Wisconsin",
+        Name = "Bucks",
         TeamId = "MIL",
         Win = 46,
         Loss = 26,

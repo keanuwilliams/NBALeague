@@ -1,4 +1,72 @@
-﻿@page
+﻿@page "{id}"
 @model TeamModel
 @{
+    ViewData["Title"] = Html.DisplayFor(model => model.Team.Name);
 }
+
+<div class="jumbotron p-2 text-center">
+    <img src="/image/nba/logo/@(Model.Team.TeamId).png" width=200 height=200 />
+    <h1 class="display-4">
+        @Model.Team.Location
+        @Model.Team.Name
+    </h1>
+    <h1 class="display-6">
+        @Model.Team.Win-@Model.Team.Loss
+    </h1>
+</div>
+
+<div class="container d-flex justify-content-between pb-4">
+    <div class="row">
+        <div class="col-sm-4">
+            <div><b>Conference:</b> @Model.Team.Division.Conference.Name</div>
+            <div><b>Division:</b> @Model.Team.Division.Name</div>
+            <div><b>Record:</b> @Model.Team.Win-@Model.Team.Loss</div>
+            <hr />
+            <div><b>Stadium:</b> @Model.Team.Stadium</div>
+            <div><b>Capacity:</b> @Model.Team.Capacity</div>
+            <hr />
+            <div><b>Address:</b> @Model.Team.Address</div>
+            <div class="pb-2">@Model.Team.City, @Model.Team.State @Model.Team.Zip </div>
+        </div>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 justify-content-end">
+            <img class="mb-2" src="/image/nba/stadium/@(Model.Team.TeamId).jpg" max-width="580" height="326">
+        </div>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Number</th>
+                <th scope="col">Name</th>
+                <th scope="col">Position</th>
+                <th scope="col">PPG</th>
+                <th scope="col">APG</th>
+                <th scope="col">RPG</th>
+                <th scope="col">Experience</th>
+                <th scope="col">College</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Player Player in Model.Team.Players)
+            {
+                <tr>
+                    <th scope="row">@Player.Number</th>
+                    <td>
+                        <a class="d-flex text-dark" asp-page="/Players/Player" asp-route-id="@Player.PlayerId">
+                            @Player.Name
+                        </a>
+                    </td>
+                    <td>@Player.Position</td>
+                    <td>@Player.PPG</td>
+                    <td>@Player.APG</td>
+                    <td>@Player.RPG</td>
+                    <td>@Player.Experience</td>
+                    <td>@Player.College</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

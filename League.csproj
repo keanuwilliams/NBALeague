@@ -25,13 +25,11 @@
     <Folder Include="Pages\Players\" />
     <Folder Include="wwwroot\image\nba\" />
     <Folder Include="wwwroot\image\nba\logo\" />
-    <Folder Include="wwwroot\image\nba\seating\" />
     <Folder Include="wwwroot\image\nba\stadium\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\image\nba\" />
     <Content Remove="wwwroot\image\nba\logo\" />
-    <Content Remove="wwwroot\image\nba\seating\" />
     <Content Remove="wwwroot\image\nba\stadium\" />
   </ItemGroup>
 </Project>
