@@ -1520,7 +1520,7 @@ namespace League.Data
   new Player {
   TeamId = "CLE",
   PlayerId = "CLE55",
-  Position = "",
+  Position = "C-F",
   Name = "Isaiah Hartenstein",
   Number = 55,
   Height = 84,
@@ -3225,7 +3225,7 @@ new Player {
  College = "Florida",
  PPG = 4.0,
  RPG = 1.0,
- APG = 45.5
+ APG = 0.0
 },
 new Player {
  TeamId = "MIA",

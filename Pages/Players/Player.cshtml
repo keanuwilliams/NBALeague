@@ -1,4 +1,44 @@
-﻿@page
+﻿@page "{id}"
 @model PlayerModel
 @{
+    ViewData["Title"] = Html.DisplayFor(model => model.Player.Name);
 }
+
+<div class="jumbotron p-2 text-center">
+    <img src="/image/nba/logo/@(Model.Player.TeamId).png" width=200 height=200 />
+    <h1 class="display-4">
+        @Model.Player.Name
+    </h1>
+    <h1 class="display-6">
+        @Model.Player.TeamId | #@Model.Player.Number | @Model.Player.Position
+    </h1>
+</div>
+<hr />
+<div class="container justify-content-between d-flex p-2">
+    <div>
+        <h5>Team Info</h5>
+        <div><b>Team:</b> @Model.Team.Location @Model.Team.Name</div>
+        <div><b>Position:</b> @Model.Position</div>
+        <div><b>Number:</b> @Model.Player.Number</div>
+    </div>
+    <div>
+        <h5>Stats</h5>
+        <div><b>Points Per Game:</b> @Model.Player.PPG</div>
+        <div><b>Assists Per Game:</b> @Model.Player.APG</div>
+        <div><b>Rebounds Per Game:</b> @Model.Player.RPG</div>
+    </div>
+    <div>
+        <h5>History</h5>
+        <div><b>Last Attended:</b> @Model.Player.College</div>
+        <div><b>Drafted:</b> @Model.Drafted</div>
+        <div><b>Experience:</b> @Model.Player.Experience @(Model.Player.Experience == 1 ? "year" : "years")</div>
+    </div>
+    <div>
+        <h5>Biometrics</h5>
+        <div><b>Height:</b> @Model.Height</div>
+        <div><b>Weight:</b> @Model.Player.Weight lbs</div>
+        <div><b>Age:</b> @Model.Player.Age</div>
+        <div><b>Birthday:</b> @Model.Birthday</div>
+    </div>
+</div>
+<hr />

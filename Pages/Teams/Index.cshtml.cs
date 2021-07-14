@@ -28,7 +28,6 @@ namespace League.Pages.Teams
 
         public SelectList AllTeams { get; set; }
 
-        /* Able to store favorite team in a cookie */
         [BindProperty(SupportsGet = true)] 
         public string SearchString { get; set; }
 
@@ -50,18 +49,8 @@ namespace League.Pages.Teams
                     t.Division.Name.ToUpper().Contains(SearchString.ToUpper()) ||
                     t.Division.Conference.Name.ToUpper().Contains(SearchString.ToUpper())).ToList();
             }
-        }
 
-        /* Get Divisions by Conference ID */
-        public List<Division> GetDivisions(string ConferenceId)
-        {
-            return Divisions.Where(d => d.ConferenceId.Equals(ConferenceId)).OrderBy(d => d.Name).ToList();
-        }
-
-        /* Get Teams Ordered By Win */
-        public List<Team> GetTeams()
-        {
-            return Teams.OrderByDescending(t => t.Win).ToList();
+            Teams.OrderByDescending(t => t.Win).ToList();
         }
     }
 }

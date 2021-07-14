@@ -1199,7 +1199,7 @@
       "outputPath": "/Users/keanuwilliams/Documents/Projects/League/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/keanuwilliams/.config/NuGet/NuGet.Config"
+        "/Users/keanuwilliams/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"

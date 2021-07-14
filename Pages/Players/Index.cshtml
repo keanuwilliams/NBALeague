@@ -4,4 +4,69 @@
     ViewData["Title"] = "Players";
 }
 
-<h1>@ViewData["Title"]</h1>
+<div class="jumbotron p-2 d-flex justify-content-between">
+    <h2>@ViewData["Title"] <small class="text-muted">2020-2021</small></h2>
+    <form asp-controller="Players" method="get">
+        <div class="row">
+            <div class="col-auto">
+                <div class="input-group">
+                    <p class="m-2 text-dark">Sort: </p>
+                    <select class="form-control" asp-for="SortField" onchange="this.form.submit();">
+                        <option value="Name">Name</option>
+                        <option value="Number">Number</option>
+                        <option value="Team">Team</option>
+                        <option value="Position">Position</option>
+                        <option value="PPG">PPG</option>
+                        <option value="APG">APG</option>
+                        <option value="RPG">RPG</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="playerSearch" aria-describedby="searchButton" asp-for="SearchString" />
+                    <button type="submit" class="btn btn-primary" id="searchButton">Search</button>
+                    <a class="m-2 text-dark" asp-area="" asp-page="/Players/Index">Reset</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Team</th>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Position</th>
+                <th scope="col">PPG</th>
+                <th scope="col">APG</th>
+                <th scope="col">RPG</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Player Player in Model.Players)
+            {
+            <tr>
+                <td>
+                    <a class="d-flex text-dark" asp-page="/Teams/Team" asp-route-id="@Player.TeamId">
+                        @Player.TeamId
+                    </a>
+                </td>
+                <td>@Player.Number</td>
+                <th scope="row">
+                    <a class="d-flex text-dark" asp-page="./Player" asp-route-id="@Player.PlayerId">
+                        @Player.Name
+                    </a>
+                </th>
+                <td>@Player.Position</td>
+                <td>@Player.PPG</td>
+                <td>@Player.APG</td>
+                <td>@Player.RPG</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

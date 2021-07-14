@@ -1,16 +1,25 @@
 ﻿<Properties StartupConfiguration="{BDE4512B-9053-44AC-8FE2-55042D82FF55}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/Teams/Team.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/Players/Player.cshtml">
     <Files>
-      <File FileName="Pages/Teams/Team.cshtml" Line="18" Column="58" />
+      <File FileName="Pages/Players/Player.cshtml" Line="19" Column="12" />
+      <File FileName="Pages/Players/Player.cshtml.cs" Line="51" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="League" expanded="True">
             <Node name="League" expanded="True">
+              <Node name="Data" expanded="True" />
+              <Node name="Models" expanded="True" />
               <Node name="Pages" expanded="True">
+                <Node name="Players" expanded="True">
+                  <Node name="Index.cshtml" expanded="True" />
+                  <Node name="Player.cshtml" expanded="True" selected="True" />
+                </Node>
+                <Node name="Shared" expanded="True" />
                 <Node name="Teams" expanded="True">
-                  <Node name="Team.cshtml" selected="True" />
+                  <Node name="Index.cshtml" expanded="True" />
+                  <Node name="Team.cshtml" expanded="True" />
                 </Node>
               </Node>
               <Node name="Properties" expanded="True" />
